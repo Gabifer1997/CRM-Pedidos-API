@@ -33,7 +33,7 @@ namespace PedidosAPI.Controllers
         }
         [HttpPost]
         [Route("AdicionaProdutos")]
-        public async Task<int> AdicionaProdutos(ProdutoModel produto)
+        public async Task<int> AdicionaProdutos(ProdutoRequestModel produto)
         {
             var result = await bll.AdicionaProdutos(configuration, produto);
             return result;

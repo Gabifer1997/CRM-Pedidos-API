@@ -33,7 +33,7 @@ namespace PedidosAPI.Controllers
         }
         [HttpPost]
         [Route("AdicionaClientes")]
-        public async Task<int> AdicionaClientes(ClienteModel cliente)
+        public async Task<int> AdicionaClientes(ClienteRequestModel cliente)
         {
             var result = await bll.AdicionaClientes(configuration, cliente);
             return result;

@@ -12,12 +12,13 @@ namespace Services
     public class PedidoServices
     {
         public async Task<List<PedidoModel>> BuscaPedidos(IConfiguration configuration) => await new PedidoDAL().BuscaPedidos(configuration);
-        public async Task<int> AdicionaPedidos(IConfiguration configuration, PedidoModel pedido)
+        public async Task<int> AdicionaPedidos(IConfiguration configuration, PedidoRequestModel pedido)
         {
             var produto = await new ProdutoServices().BuscaProdutosById(configuration, pedido.ProdutoId);
+            var pedidoId = 0;
             if (produto.Quantidade > pedido.Quantidade)
             {
-                pedido.PedidoId = await new PedidoDAL().InsertPedidos(configuration, pedido);
+                pedidoId = await new PedidoDAL().InsertPedidos(configuration, pedido);
 
                 produto.Quantidade -= pedido.Quantidade;
                 await new ProdutoServices().AlteraProdutos(configuration, produto);
@@ -25,7 +26,7 @@ namespace Services
             else
                 throw new Exception("Estoque Insuficiente");
 
-            return pedido.PedidoId;
+            return pedidoId;
         }
         public async Task<bool> CancelaPedidos(IConfiguration configuration, int codigoPedido)
         {
@@ -39,7 +40,6 @@ namespace Services
                 StatusId = pedido.StatusId,
                 Quantidade = pedido.Quantidade,
                 ClienteId = pedido.ClienteId,
-                DataCriacao = pedido.DataCriacao,
                 ProdutoId = pedido.ProdutoId
             });
         }

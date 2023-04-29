@@ -12,7 +12,12 @@ namespace Repositories.Model
         public string Nome { get; set; }
         public string Documento { get; set; }
         public string Email { get; set; }
-        public DateTime DataCriacao { get; set; }
         public bool Apagado { get; set; }
+    }
+    public class ClienteRequestModel
+    {
+        public string Nome { get; set; }
+        public string Documento { get; set; }
+        public string Email { get; set; }
     }
 }

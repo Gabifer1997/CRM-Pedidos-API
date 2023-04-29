@@ -40,7 +40,7 @@ namespace Repositories.DAL
             }
             return valor;
         }
-        public async Task<int> InsertProdutos(IConfiguration configuration, ProdutoModel model)
+        public async Task<int> InsertProdutos(IConfiguration configuration, ProdutoRequestModel model)
         {
             var id = 0;
             using (var conn = new SqlConnection(configuration.GetConnectionString("BD_Connection")))

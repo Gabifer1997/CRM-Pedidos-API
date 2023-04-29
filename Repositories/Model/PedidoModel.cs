@@ -13,7 +13,13 @@ namespace Repositories.Model
         public int StatusId { get; set; }
         public int ClienteId { get; set; }
         public int Quantidade { get; set; }
-        public DateTime DataCriacao { get; set; }
         public bool Apagado { get; set; }
+    }
+    public class PedidoRequestModel
+    {
+        public int ProdutoId { get; set; }
+        public int StatusId { get; set; }
+        public int ClienteId { get; set; }
+        public int Quantidade { get; set; }
     }
 }

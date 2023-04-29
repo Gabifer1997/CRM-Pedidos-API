@@ -36,7 +36,7 @@ namespace Repositories.DAL
             }
             return valor;
         }
-        public async Task<int> InsertClientes(IConfiguration configuration, ClienteModel model)
+        public async Task<int> InsertClientes(IConfiguration configuration, ClienteRequestModel model)
         {
             var id = 0;
             using (var conn = new SqlConnection(configuration.GetConnectionString("BD_Connection")))
