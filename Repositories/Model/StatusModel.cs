@@ -10,7 +10,10 @@ namespace Repositories.Model
     {
         public int StatusId { get; set; }
         public string Descricao { get; set; }
-        public DateTime DataCriacao { get; set; }
         public bool Apagado { get; set; }
+    }
+    public class StatusRequestModel
+    {
+        public string Descricao { get; set; }
     }
 }

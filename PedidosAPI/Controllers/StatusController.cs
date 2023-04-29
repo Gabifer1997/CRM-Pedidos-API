@@ -33,7 +33,7 @@ namespace PedidosAPI.Controllers
         }
         [HttpPost]
         [Route("AdicionaStatus")]
-        public async Task<int> AdicionaStatus(StatusModel status)
+        public async Task<int> AdicionaStatus(StatusRequestModel status)
         {
             var result = await bll.AdicionaStatus(configuration, status);
             return result;

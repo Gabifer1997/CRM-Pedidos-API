@@ -37,7 +37,7 @@ namespace Repositories.DAL
             }
             return valor;
         }
-        public async Task<int> InsertPedidos(IConfiguration configuration, PedidoModel model)
+        public async Task<int> InsertPedidos(IConfiguration configuration, PedidoRequestModel model)
         {
             var id = 0;
             using (var conn = new SqlConnection(configuration.GetConnectionString("BD_Connection")))

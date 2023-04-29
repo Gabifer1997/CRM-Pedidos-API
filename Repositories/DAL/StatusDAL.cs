@@ -34,7 +34,7 @@ namespace Repositories.DAL
             }
             return valor;
         }
-        public async Task<int> InsertStatus(IConfiguration configuration, StatusModel model)
+        public async Task<int> InsertStatus(IConfiguration configuration, StatusRequestModel model)
         {
             var id = 0;
             using (var conn = new SqlConnection(configuration.GetConnectionString("BD_Connection")))

@@ -47,7 +47,7 @@ namespace PedidosAPI.Controllers
         }
         [HttpPost]
         [Route("AdicionaPedidos")]
-        public async Task<int> AdicionaPedidos(PedidoModel pedido)
+        public async Task<int> AdicionaPedidos(PedidoRequestModel pedido)
         {
             var result = await bll.AdicionaPedidos(configuration, pedido);
             return result;

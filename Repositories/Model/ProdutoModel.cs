@@ -12,7 +12,12 @@ namespace Repositories.Model
         public string Descricao { get; set; }
         public decimal Valor { get; set; }
         public int Quantidade { get; set; }
-        public DateTime DataCriacao { get; set; }
         public bool Apagado { get; set; }
+    }
+    public class ProdutoRequestModel
+    {
+        public string Descricao { get; set; }
+        public decimal Valor { get; set; }
+        public int Quantidade { get; set; }
     }
 }
